@@ -1,0 +1,32 @@
+
+.container{
+    background-color: yellow;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.main_div{
+    margin: 10px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+
+.card-img{
+    width: auto;
+    height: 250;
+
+}
+
+.cards{
+    display: grid;
+   grid-template-columns: repeat(3, auto);
+
+}
+
+@media (max-width: 768px) {
+    
+  }
+  
