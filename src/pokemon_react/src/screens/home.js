@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment  } from "react";
 import AddPokemon from "../components/pokemons/add_pokemon/add_pokemon";
 import PokemonList from "../components/pokemons/pokemon_list/pokemonlist"
 import TipoList from "../components/tipos_pokemon/tipo_list/tipo_list";
@@ -11,13 +11,8 @@ const HomeScreen = () => {
             <PokemonList/>
             <TipoList />
             <AddTipo />
-
        </Fragment>
-           
-        
-     
     )
-
 }
 
 export default HomeScreen;
