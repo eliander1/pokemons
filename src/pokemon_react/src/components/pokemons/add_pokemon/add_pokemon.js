@@ -1,9 +1,12 @@
 import React, { useState, useEffect, Fragment } from "react";
 import getPokemons from "../get_pokemons/get_pokemons";
+import getTipos from "../../tipos_pokemon/get_tipos/get_tipos";
+
 
 const AddPokemon = (props) => {
 
     const [pokemons, setPokemons] = useState([]);
+    const [tipos, setTipos] = useState([])
 
     const [formValues, setFormValues] = useState({
       nome: '',
@@ -11,7 +14,15 @@ const AddPokemon = (props) => {
       imagem: '',
       habilidades: ''
     });
-  
+
+
+
+    useEffect(() => {
+      getTipos().then(data => {
+        setTipos(data)
+      })
+    })
+
     useEffect(() => {
       getPokemons().then(data => { 
         setPokemons(data)
@@ -84,19 +95,22 @@ const AddPokemon = (props) => {
 
           
           
-          <div class="col-md-5">
-            <select class="form-select" id="validationCustom04" required onChange={handleInputChange} name="tipo_id" value={formValues.tipo_id}>
-              <option selected disabled value=''>Escolha o tipo</option>
-                {pokemons && pokemons.map((pokemon, index) => (
-                <Fragment> <option>{pokemon.tipo_id}</option> </Fragment>))}
+      <div class="col-md-5">
+        <select class="form-select" id="validationCustom04" required onChange={handleInputChange} name="tipo_id" value={formValues.tipo_id}>
+          <option selected disabled value=''>Escolha o tipo</option>
+
+            {tipos && tipos.map((tipos, index) => (
+
+            <Fragment> <option key={index} value={tipos.id}>{tipos.nome}</option> </Fragment>))}
+
+
             </select>
             <div class="invalid-feedback">
                 Please select a valid state.
             </div>
           </div>
 
-          {/* <input className="form-control" type="text" name="tipo_id" placeholder="Digite aqui o nome do pokemon" 
-          value={formValues.tipo_id} onChange={handleInputChange} /> */}
+    
       </div>
       
       <div class="input-group mt-2">

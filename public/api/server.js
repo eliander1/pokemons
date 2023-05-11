@@ -45,7 +45,21 @@ app.post('/pokemons', (req, res) => {
 
 //R
 app.get('/pokemons', (req, res) => {
-  pool.query('SELECT * FROM pokemons', (err, result) => {
+  pool.query('SELECT p.*, t.nome as tipo_nome FROM pokemons p INNER JOIN tipos t ON p.tipo_id = t.id', (err, result) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Erro ao buscar pokemons');
+    } else {
+      res.send(result.rows);
+    }
+  });
+});
+
+
+
+app.get('/pokemons/:id', (req, res) => {
+  const { id } = req.params;
+  pool.query('SELECT p.*, t.id as tipo_id, t.nome as tipo_nome, t.descricao as tipo_descricao FROM pokemons p INNER JOIN tipos t ON p.tipo_id = t.id WHERE p.id = $1', [id], (err, result) => {
     if (err) {
       console.error(err);
       res.status(500).send('Erro ao buscar pokemons');
@@ -58,11 +72,11 @@ app.get('/pokemons', (req, res) => {
 //U
 app.put('/pokemons/:id', (req, res) => {
   const { id } = req.params;
-  const { nome, email } = req.body;
+  const { nome, habilidade } = req.body;
 
   pool.query(
-    'UPDATE usuarios SET nome=$1, email=$2 WHERE id=$3',
-    [nome, email, id],
+    'UPDATE usuarios SET nome=$1, habilidade=$2 WHERE id=$3',
+    [nome, habilidade, id],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -112,6 +126,18 @@ app.post('/tipos', (req, res) => {
 //R
 app.get('/tipos', (req, res) => {
   pool.query('SELECT * FROM tipos', (err, result) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Erro ao buscar tipos de pokemons');
+    } else {
+      res.send(result.rows);
+    }
+  });
+});
+
+app.get('/tipos/:id', (req, res) => {
+  const { id } = req.params;
+  pool.query('SELECT * FROM tipos where id=$1', [id], (err, result) => {
     if (err) {
       console.error(err);
       res.status(500).send('Erro ao buscar tipos de pokemons');

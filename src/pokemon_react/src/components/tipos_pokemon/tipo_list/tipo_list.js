@@ -24,7 +24,7 @@ const TipoList = (props) => {
               <div class="card-body">
                 <h5 class="card-title">{Tipo.nome}</h5>
                 <p class="card-text">{Tipo.descricao}</p>
-                  <button className='btn btn-primary' onClick={() => ''}>Editar</button>
+                  <button className='btn btn-primary' onClick={() => '/'}>Editar</button>
                   <button className='btn btn-danger m-2' onClick={() => deleteTipo(Tipo.id)} >Excluir</button>
               </div>
             </div>

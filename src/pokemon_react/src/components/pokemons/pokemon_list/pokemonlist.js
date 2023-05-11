@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import  deletePokemon  from '../delete_pokemon/delete_pokemon'
 import getPokemons from "../get_pokemons/get_pokemons";
+import { Link } from "react-router-dom";
 
 
 const PokemonList = (props) => {
@@ -26,7 +27,11 @@ const PokemonList = (props) => {
               <div class="card-body">
                 <h5 class="card-title">{pokemon.nome}</h5>
                 <p class="card-text">{pokemon.habilidades}</p>
-                  <button className='btn btn-primary' onClick=''>Detalhes</button>
+
+                 
+                 
+                <Link to={`/detalhes/${pokemon.id}`} className='btn btn-primary'>Detalhes</Link>
+
                   <button className='btn btn-danger m-2' onClick={() => deletePokemon(pokemon.id)} >Excluir</button>
               </div>
             </div>

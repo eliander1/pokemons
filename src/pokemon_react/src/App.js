@@ -1,16 +1,10 @@
 import React from "react";
-import HomeScreen from "./screens/home";
+import RoutesProject from "./routes";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-      </Routes>
-    </Router>
-
+    <RoutesProject/>
   );
 }
 
