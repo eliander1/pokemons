@@ -14,7 +14,7 @@ const AddTipo = (props) => {
       getTipos().then(data => { 
         setTipos(data)
       })
-    });
+    }, [tipos]);
 
     const handleInputChange = (event) => {
         const target = event.target;

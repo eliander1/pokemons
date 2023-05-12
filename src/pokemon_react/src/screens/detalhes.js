@@ -25,7 +25,7 @@ const PokemonDetails = () => {
     getPokemons(id).then(data => { 
       setPokemons(data)
     })
-  });
+  }, []);
   
 
   return (

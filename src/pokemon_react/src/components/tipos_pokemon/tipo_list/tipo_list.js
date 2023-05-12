@@ -16,7 +16,7 @@ const TipoList = (props) => {
     getTipos().then(data => { 
       setTipos(data)
     })
-  });
+  }, [Tipos]);
 
 
   return (

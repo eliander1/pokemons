@@ -13,6 +13,18 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+let requestCount = 0;
+setInterval(() => {
+  console.log(`Requests per minute: ${requestCount}`);
+  requestCount = 0;
+}, 60000);
+
+app.use((req, res, next) => {
+  requestCount++;
+  next();
+});
+
 const pool = new pg.Pool({
   user: 'postgres',
   host: 'teste-htq-dev.fly.dev',

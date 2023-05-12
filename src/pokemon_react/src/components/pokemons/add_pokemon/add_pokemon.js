@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import getPokemons from "../get_pokemons/get_pokemons";
 import getTipos from "../../tipos_pokemon/get_tipos/get_tipos";
 
@@ -21,13 +21,13 @@ const AddPokemon = (props) => {
       getTipos().then(data => {
         setTipos(data)
       })
-    })
+    }, [tipos])
 
     useEffect(() => {
       getPokemons().then(data => { 
         setPokemons(data)
       })
-    });
+    }, [pokemons]);
 
     const handleInputChange = (event) => {
         const target = event.target;
@@ -52,18 +52,15 @@ const AddPokemon = (props) => {
         });
         await response.json();
       
-        // Fetch the updated list of Pokemons from the server
         const updatedPokemons = await getPokemons();
         return updatedPokemons;
       }
         
       const handleAddPokemon = async (event) => {
         event.preventDefault();
-        const addedPokemon = await addPokemon(formValues);
-      
-        // Update the list of Pokemons with the updated list
+
+        const addedPokemon = await addPokemon(formValues);       
         setPokemons(addedPokemon);
-      
         setFormValues({
           nome: '',
           tipo_id: '',
@@ -71,7 +68,7 @@ const AddPokemon = (props) => {
           habilidades: ''
         });
       
-        // Fetch the updated list of Pokemons from the server
+       
         return await getPokemons()
       };
       

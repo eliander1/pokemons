@@ -11,7 +11,7 @@ const PokemonList = (props) => {
     getPokemons().then(data => { 
       setPokemons(data)
     })
-  });
+  }, [pokemons]);
   
 
   return (
