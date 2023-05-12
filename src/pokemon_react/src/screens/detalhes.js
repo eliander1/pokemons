@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PokemonEdit from "../components/pokemons/update_pokemon/edit_pokemon";
 
 
 
 const PokemonDetails = () => {
   const [pokemons, setPokemons] = useState([]);
+  const [showDiv, setShowDiv] = useState(false);
+
+  const handleButtonClick = (id) => {
+    setShowDiv(id === showDiv ? null : id);
+  };
+  
 
   let { id } = useParams();
   
@@ -37,7 +44,13 @@ const PokemonDetails = () => {
                 <p>Tipo: {pokemon.tipo_nome}</p>
                 <p>Descrição: {pokemon.tipo_descricao}</p>
 
-                  <button className='btn btn-primary'>Editar</button>
+                <button className='btn btn-primary' onClick={() => handleButtonClick(pokemons.id)}>Editar</button>
+                  {showDiv === pokemons.id && (
+                  <div>
+                  
+                     <PokemonEdit pokemon={pokemon} setUpdateState={setPokemons}/>
+                    </div>
+                    )}
               </div>
             </div>
           </div>

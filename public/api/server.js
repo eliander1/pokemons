@@ -72,11 +72,11 @@ app.get('/pokemons/:id', (req, res) => {
 //U
 app.put('/pokemons/:id', (req, res) => {
   const { id } = req.params;
-  const { nome, habilidade } = req.body;
+  const { nome, habilidades } = req.body;
 
   pool.query(
-    'UPDATE pokemons SET nome=$1, habilidade=$2 WHERE id=$3',
-    [nome, habilidade, id],
+    'UPDATE pokemons SET nome=$1, habilidades=$2 WHERE id=$3',
+    [nome, habilidades, id],
     (err, result) => {
       if (err) {
         console.log(err);

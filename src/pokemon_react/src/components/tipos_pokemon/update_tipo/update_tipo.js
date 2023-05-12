@@ -9,8 +9,8 @@ export async function updateTipo(id, tipo) {
     body: JSON.stringify(tipo)
   });
 
-  const updatedTipos = await getTipos(); // Obtém a lista atualizada de Tipos
-  return updatedTipos; // Atualiza o estado com a nova lista de Tipos
+  const updatedTipos = await getTipos(); 
+  return updatedTipos; 
 }
 
 export default updateTipo;

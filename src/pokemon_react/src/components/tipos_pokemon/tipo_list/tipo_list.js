@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import getTipos from '../get_tipos/get_tipos'
 import deleteTipo from "../delete_tipo/delete_tipo";
-import TipoEdit from "../tipo_edit/tipo_edit";
+import TipoEdit from "../update_tipo/tipo_edit";
 
 const TipoList = (props) => {
   const [Tipos, setTipos] = useState([]);
@@ -36,7 +36,7 @@ const TipoList = (props) => {
                   <button className='btn btn-primary' onClick={() => handleButtonClick(Tipo.id)}>Editar</button>
                   {showDiv === Tipo.id && (
                   <div>
-                      <p>Teste</p>
+                  
                      <TipoEdit tipo={Tipo} setUpdateState={setTipos}/>
                     </div>
                     )}

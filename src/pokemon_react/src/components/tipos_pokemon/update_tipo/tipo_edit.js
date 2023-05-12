@@ -9,6 +9,7 @@ const TipoEdit = ({ tipo, setUpdateState }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const tipoData = { nome, descricao };
+    
     await updateTipo(tipo.id, tipoData);
     setUpdateState((prevState) =>
       prevState.map((prevTipo) =>
