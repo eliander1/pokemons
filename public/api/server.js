@@ -111,7 +111,7 @@ app.post('/tipos', (req, res) => {
 
   pool.query(
     'INSERT INTO tipos (nome, descricao) VALUES ($1, $2)',
-    [nome, descricao],
+    [nome, descricao, id],
     (err, result) => {
       if (err) {
         console.log(err);
