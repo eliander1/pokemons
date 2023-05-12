@@ -1,0 +1,86 @@
+
+
+.form{
+    background-color: $blue-pokemon-color;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+.input-group-text{
+    background-color: $yellow-dark-pokemon-color;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+}
+
+
+.background-allcards{
+    background-color: brown;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    
+}
+
+.card{
+    border-radius: 20px;
+}
+
+.card-img{
+    width: auto;
+    height: 250px;
+    background-color: gray;
+    border-radius: 20px  20px 0px 0px;
+}
+
+.card-body{
+    background-color: antiquewhite;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.btn-detalhes{
+    background-color: $blue-pokemon-color;
+    color: white
+}
+
+.btn-excluir{
+    background-color: $red-light-pokemon-color;
+    color: white
+    //passar o onHover aqui dentro
+}
+
+
+.card-body-tipo{
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+}
+
+.card-detalhe{
+    width: 600px;
+    margin: 20px auto
+}
+
+.card-detalhe-img{
+    width: auto;
+    height: 450px;
+    background-color: gray;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    
+  }
+  

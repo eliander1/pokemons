@@ -64,7 +64,7 @@ const AddTipo = (props) => {
       
 
       return (
-      <div>
+      <div className="form">
       <div className="mt-3 mb-3">
       <h2>Cadastre um novo tipo de pokemon abaixo</h2>
       <form onSubmit={handleAddTipo} >
@@ -84,7 +84,7 @@ const AddTipo = (props) => {
 
 
       <br />
-      <button className="btn btn-success" type="submit">Adicionar Tipo de Pokemon</button>
+      <button className="btn btn-success" type="submit">Cadastrar Novo Tipo</button>
     </form>
 
     </div>

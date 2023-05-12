@@ -74,8 +74,8 @@ const AddPokemon = (props) => {
       
 
       return (
-      <div>
-      <div className="mt-3 mb-3">
+      
+      <div className="form mt-3 mb-3">
       <h2>Cadastre seu pokemon preferido abaixo</h2>
       <form onSubmit={handleAddPokemon} >
 
@@ -127,7 +127,7 @@ const AddPokemon = (props) => {
     </form>
 
     </div>
-    </div>
+    
 
         )
 }

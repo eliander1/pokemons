@@ -15,24 +15,26 @@ const PokemonList = (props) => {
   
 
   return (
-    <div className="card">
+    <div className="background-allcards">
     
       <h3 className="mt-3">Lista de pokemons cadastrados</h3>
-    <div className="row">
+      <div className="row">
         {pokemons && pokemons.map((pokemon, index) => (
           
-        <div key={pokemon.id} class="col-4">
-          <div class="card m-2">
-            <img src={pokemon.imagem} class="card-img" alt="Imagem do pokemon"/>
-              <div class="card-body">
-                <h5 class="card-title">{pokemon.nome}</h5>
-                <p class="card-text">{pokemon.habilidades}</p>
+        <div key={pokemon.id} className="col-4">
+          <div className="card m-2">
+
+            <img src={pokemon.imagem} className="card-img" alt="Imagem do pokemon"/>
+
+              <div className="card-body">
+                <h5 className="card-title">{pokemon.nome}</h5>
+                <p className="card-text">{pokemon.habilidades}</p>
 
                  
                  
-                <Link to={`/detalhes/${pokemon.id}`} className='btn btn-primary'>Detalhes</Link>
+                <Link to={`/detalhes/${pokemon.id}`} className='btn btn-detalhes'>Detalhes</Link>
 
-                  <button className='btn btn-danger m-2' onClick={() => deletePokemon(pokemon.id)} >Excluir</button>
+                  <button className='btn btn-excluir m-2' onClick={() => deletePokemon(pokemon.id)} >Excluir</button>
               </div>
             </div>
           </div>
