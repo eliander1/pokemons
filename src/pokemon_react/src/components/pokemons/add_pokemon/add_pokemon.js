@@ -75,8 +75,6 @@ const AddPokemon = (props) => {
         return await getPokemons()
       };
       
-    
-
 
       return (
       <div>
@@ -84,44 +82,44 @@ const AddPokemon = (props) => {
       <h2>Cadastre seu pokemon preferido abaixo</h2>
       <form onSubmit={handleAddPokemon} >
 
-      <div class="input-group mt-2">
-          <span class="input-group-text" id="basic-addon1">Nome</span>
+      <div className="input-group mt-2">
+          <span className="input-group-text" id="basic-addon1">Nome</span>
           <input className="form-control" type="text" name="nome" placeholder="Digite aqui o nome do pokemon"         
           value={formValues.nome} onChange={handleInputChange} />
       </div>
 
-      <div class="input-group mt-2">
-          <span class="input-group-text" id="basic-addon1">Tipo ID</span>
+      <div className="input-group mt-2">
+          <span className="input-group-text" id="basic-addon1">Tipo ID</span>
 
           
           
-      <div class="col-md-5">
-        <select class="form-select" id="validationCustom04" required onChange={handleInputChange} name="tipo_id" value={formValues.tipo_id}>
-          <option selected disabled value=''>Escolha o tipo</option>
+      <div className="col-md-5">
+        <select className="form-select" id="validationCustom04" required onChange={handleInputChange} name="tipo_id" value={formValues.tipo_id}>
+          <option defaultValue='' >Escolha o tipo</option>
 
             {tipos && tipos.map((tipos, index) => (
 
-            <Fragment> <option key={index} value={tipos.id}>{tipos.nome}</option> </Fragment>))}
+            <option key={tipos.id} value={tipos.id}>{tipos.nome}</option> ))}
 
 
             </select>
-            <div class="invalid-feedback">
+            <div className="invalid-feedback">
                 Please select a valid state.
             </div>
-          </div>
+      </div>
 
     
       </div>
       
-      <div class="input-group mt-2">
-          <span class="input-group-text" id="basic-addon1">Imagem</span>
+      <div className="input-group mt-2">
+          <span className="input-group-text" id="basic-addon1">Imagem</span>
           <input className="form-control" type="text" name="imagem" placeholder="Cole aqui o link da imagem"
           value={formValues.imagem} onChange={handleInputChange} />
       </div>
 
 
-      <div class="input-group mt-2">
-        <span class="input-group-text" id="basic-addon1">Habilidades</span>
+      <div className="input-group mt-2">
+        <span className="input-group-text" id="basic-addon1">Habilidades</span>
         <input className="form-control" type="text" name="habilidades" placeholder="Descreva aqui as habilidades"
         value={formValues.habilidades} onChange={handleInputChange} />
       </div>

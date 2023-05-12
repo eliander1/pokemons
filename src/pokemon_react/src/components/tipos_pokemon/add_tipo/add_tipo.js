@@ -69,15 +69,15 @@ const AddTipo = (props) => {
       <h2>Cadastre um novo tipo de pokemon abaixo</h2>
       <form onSubmit={handleAddTipo} >
 
-      <div class="input-group mt-2">
-          <span class="input-group-text" id="basic-addon1">Nome</span>
+      <div className="input-group mt-2">
+          <span className="input-group-text" id="basic-addon1">Nome</span>
           <input className="form-control" type="text" name="nome" placeholder="Digite aqui o nome do pokemon"         
           value={formValues.nome} onChange={handleInputChange} />
       </div>
 
 
-      <div class="input-group mt-2">
-        <span class="input-group-text" id="basic-addon1">Habilidades</span>
+      <div className="input-group mt-2">
+        <span className="input-group-text" id="basic-addon1">Habilidades</span>
         <input className="form-control" type="text" name="descricao" placeholder="Descreva aqui as habilidades"
         value={formValues.descricao} onChange={handleInputChange} />
       </div>

@@ -75,7 +75,7 @@ app.put('/pokemons/:id', (req, res) => {
   const { nome, habilidade } = req.body;
 
   pool.query(
-    'UPDATE usuarios SET nome=$1, habilidade=$2 WHERE id=$3',
+    'UPDATE pokemons SET nome=$1, habilidade=$2 WHERE id=$3',
     [nome, habilidade, id],
     (err, result) => {
       if (err) {
@@ -145,6 +145,22 @@ app.get('/tipos/:id', (req, res) => {
       res.send(result.rows);
     }
   });
+});
+
+
+//U
+app.put('/tipos/:id', (req, res) => {
+const { id } = req.params;
+const { nome, descricao } = req.body;
+
+pool.query('UPDATE tipos SET nome=$1, descricao=$2 WHERE id=$3', [nome, descricao, id], (err, result) => {
+  if (err) {
+    console.log(err);
+    res.status(500).send('Erro ao atualizar tipo de pokemon');
+  } else {
+    res.send('Tipo de pokemon atualizado com sucesso');
+  }
+  },);
 });
 
 //D

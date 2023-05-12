@@ -21,7 +21,7 @@ const PokemonList = (props) => {
     <div className="row">
         {pokemons && pokemons.map((pokemon, index) => (
           
-        <div class="col-4">
+        <div key={pokemon.id} class="col-4">
           <div class="card m-2">
             <img src={pokemon.imagem} class="card-img" alt="Imagem do pokemon"/>
               <div class="card-body">
