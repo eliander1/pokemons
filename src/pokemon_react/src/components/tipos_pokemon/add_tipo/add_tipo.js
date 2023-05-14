@@ -53,8 +53,6 @@ const AddTipo = (props) => {
       
         setFormValues({
           nome: '',
-          tipo_id: '',
-          imagem: '',
           descricao: ''
         });
       
@@ -67,6 +65,7 @@ const AddTipo = (props) => {
       <div className="form">
       <div className="mt-3 mb-3">
       <h2>Cadastre um novo tipo de pokemon abaixo</h2>
+      
       <form onSubmit={handleAddTipo} >
 
       <div className="input-group mt-2">
